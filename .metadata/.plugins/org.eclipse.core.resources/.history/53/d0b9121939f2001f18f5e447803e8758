@@ -1,0 +1,58 @@
+package Easy;
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class p409 {
+
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int casos;
+		int nNivel;
+		int nColla;
+		int a1, a2;
+		
+		casos = sc.nextInt();
+		
+		/*while(casos > 0) {*/
+			
+			int nivells = 0;
+			nNivel = sc.nextInt();
+			nColla = sc.nextInt();
+			
+			int pAlturas[]= new int[nColla];
+			for(int i = 0 ; i < nColla; i++) {
+				pAlturas[i] = sc.nextInt();
+			}
+			
+			Arrays.sort(pAlturas);
+			
+			/*while(nColla >1) {
+				a1 =pAlturas[nColla-1];
+				nColla--;
+				a2 = pAlturas[nColla-1];
+				nColla--;
+				if(Math.abs(a1-a2) <= 15) {
+					nivells++;
+					for(int i = 0; i > nNivel-1; i++) {
+						a1=a2;
+						a2=pAlturas[nColla-1];
+						nColla--;
+						if (Math.abs(a1-a2) <= 15)
+							nivells ++;
+						else
+							break;
+					}
+				}*/
+			//}	
+			System.out.println(pAlturas);
+			casos--;
+		//}
+		sc.close();
+	}
+
+}

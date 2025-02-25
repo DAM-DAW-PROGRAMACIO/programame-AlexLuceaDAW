@@ -1,0 +1,65 @@
+package Easy;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class p729 {
+
+	public static void main(String[] args) throws Exception{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int nJugadors;
+		
+		String Jugadors[][];
+		String linia;
+		String nomJugadors;
+		int cartro[];
+		int index;
+		
+		
+		int quantitatNums;
+		String guanyadors[];
+		
+		linia = br.readLine();
+		
+		while(linia != null) {
+			nJugadors = Integer.parseInt(br.readLine());
+			
+			String dadesJugadors[] = new String[nJugadors];
+			
+			for(int i = 0; i < nJugadors; i++) {
+				
+				linia = br.readLine();
+				
+				dadesJugadors = linia.split(" ");
+				
+				for(int j = 0; j < dadesJugadors.length; j++ ){
+					
+					int boles[] = Integer.parseInt(dadesJugadors[j+1]);
+				}
+					
+			}
+			linia = br.readLine();
+			quantitatNums = Integer.parseInt(linia);
+			linia=br.readLine();
+			for (int i = 0; i < quantitatNums; i++) {
+				int nums[] = new int[quantitatNums];
+				String llistaNums[] = linia.split(" ");
+				nums[i] = Integer.parseInt(llistaNums[i]);
+			}
+			
+			for(int i = 0; i < dadesJugadors.length; i++) {
+				
+				String llistaCartro[] = dadesJugadors[i].split(" ");
+				String nomJugador = llistaCartro[0];
+				
+				String jejeJugadors[] = dadesJugadors[1].split("");
+				
+				
+			}
+			
+			
+		}
+	}
+
+}

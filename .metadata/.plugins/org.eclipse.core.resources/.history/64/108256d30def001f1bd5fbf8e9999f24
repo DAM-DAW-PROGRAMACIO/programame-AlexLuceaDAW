@@ -1,0 +1,41 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p455 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int entrades = sc.nextInt();
+		int num;
+		double numPerCent;
+		double diferencia;
+		boolean trobat = false;
+		int contador;
+		
+		for(int i = 0; i <entrades; entrades++){
+			
+			contador = 1;
+			
+			num= sc.nextInt();
+			
+			numPerCent = num/100;
+			
+			diferencia = 1.0*100/numPerCent;
+		
+			while(!trobat) {
+				if(contador%diferencia == 0)
+					trobat =true;
+				else 
+					contador++;
+			}
+			
+			System.out.println(contador);
+			
+		}	
+		
+	}
+
+}

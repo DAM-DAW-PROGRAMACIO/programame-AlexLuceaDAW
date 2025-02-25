@@ -1,0 +1,47 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p245 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int nHermanos; 
+		long n1;
+		long n2;
+		boolean dalton = true;
+
+		nHermanos = sc.nextInt();
+		
+		while(nHermanos != 0) {
+			
+			n1 = sc.nextLong();
+			n2 = sc.nextLong();
+			if(n1<n2) {
+				for(int i = 1; i < nHermanos; i++) {
+					if (n1 < n2) {
+						n1 = sc.nextLong();
+						n2 = sc.nextLong();
+					}else {
+						dalton =false;
+						sc.nextLine();
+					}
+				}
+			}else {
+				dalton = false;
+				sc.nextLine();
+			}
+	
+			if(dalton)
+				System.out.println("DALTON");
+			else
+				System.out.println("DESCONOCIDOS");
+
+			nHermanos = sc.nextInt();
+		}
+	}
+}
+
+
