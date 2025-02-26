@@ -1,0 +1,33 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p148 {
+
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		sc.useDelimiter(":|\n");
+		
+		int h = sc.nextInt();	
+		int min= sc.nextInt();
+		
+		int minutsMax = 23*60 + 59;
+		int result;
+		
+		
+		while(!(h==0 && min==0)) {
+			
+			result = minutsMax -(h * 60 + min);
+			
+			
+			System.out.println(result);
+			
+			h = sc.nextInt();	
+			min= sc.nextInt();
+		}
+		sc.close();
+	}
+
+}
