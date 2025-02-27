@@ -1,0 +1,17 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p000 {
+
+	public static void main(String[] args) throws Exception{
+		
+		// Create a scanner object
+		Scanner myObj = new Scanner("A string to scan");
+
+		// Output the next token
+		System.out.println(myObj.next());
+
+	}
+
+}

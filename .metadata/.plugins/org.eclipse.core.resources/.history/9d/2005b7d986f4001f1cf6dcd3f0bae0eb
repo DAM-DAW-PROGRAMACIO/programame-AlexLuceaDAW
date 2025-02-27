@@ -1,0 +1,37 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p190 {
+
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		long num=sc.nextInt();
+		long den = sc.nextInt();
+		long magicNum;
+	
+		
+		while(!(num<den)) {
+			long resultat=1;
+			magicNum = num-den;
+			
+			if(magicNum==1) {
+				resultat = num;
+			}else {
+				for (long i=magicNum; i<=magicNum; i++) {
+				resultat *=i;
+				}
+			}
+			
+			
+			
+			System.out.println(resultat);
+			num=sc.nextInt();
+			den = sc.nextInt();
+		}
+	}
+
+}

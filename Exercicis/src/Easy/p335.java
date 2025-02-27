@@ -13,6 +13,7 @@ public class p335 {
 		int casos = sc.nextInt();
 		
 		
+		
 		for(int i=0; i<casos; i++) {
 			altura = sc.nextInt();
 			long bolasFila = 0;

@@ -1,0 +1,41 @@
+package Easy;
+
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+
+public class p416 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc =new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
+		
+		
+		int casos = sc.nextInt();
+		
+		while(!(casos==0)) 
+		{	
+			
+			HashSet<String> sortedDates = new HashSet<String>();
+			String aniversari="";
+			String resposta="NO";
+			String linia;
+			
+			linia = sc.nextLine();
+			String dates[] = new String [casos];
+			
+			dates = linia.split(" ");
+			for(int i=0; i < dates.length; i++) {
+				aniversari = dates[i].substring(0, dates[i].length() - 5);
+				if(!sortedDates.add(aniversari))
+					resposta = "SI";
+			}
+			
+			System.out.println(resposta);
+			casos = sc.nextInt();
+		}
+	}
+
+}

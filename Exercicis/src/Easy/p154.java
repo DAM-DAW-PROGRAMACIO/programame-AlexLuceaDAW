@@ -10,7 +10,6 @@ public class p154 {
 		Scanner sc = new Scanner(System.in);
 		String line;
 		int digits; 
-		int ultDigits;
 		String lletres;
 		
 		
@@ -24,10 +23,10 @@ public class p154 {
 			lletres = arrayLine[1];
 
 			if(digits != 9999) {
-				ultDigits = digits++;
+				 digits++;
 			}
 			else {
-				ultDigits=0000;
+				digits=0000;
 				if(lletres.endsWith("Z"))
 				{
 					char lletra = lletres.charAt(1);
@@ -55,7 +54,7 @@ public class p154 {
 				}
 			}
 				
-			System.out.format("%04d %s\n",ultDigits, lletres);
+			System.out.format("%04d %s\n",digits, lletres);
 			
 			
 			line=sc.nextLine();

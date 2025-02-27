@@ -1,0 +1,20 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p000 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+		while(linia !=null && linia!=null) {
+			
+			
+			linia=br.readLine();
+		}
+	}
+
+}
