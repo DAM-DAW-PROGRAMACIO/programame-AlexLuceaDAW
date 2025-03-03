@@ -1,0 +1,27 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p515 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int gots = sc.nextInt();
+		
+		
+		
+		while(gots!=0) {
+			int viatges = 0;
+			if(gots%2==0)
+				viatges=gots/2;
+			else
+				viatges=(gots/2)+1;
+			
+			gots=sc.nextInt();
+		}
+		sc.close();
+	}
+
+}

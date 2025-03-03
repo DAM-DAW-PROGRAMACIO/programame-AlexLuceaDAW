@@ -22,10 +22,7 @@ public class p154 {
 			digits = Integer.parseInt(arrayLine[0]);
 			lletres = arrayLine[1];
 
-			if(digits != 9999) {
-				 digits++;
-			}
-			else {
+			if(digits +1 == 9999) {
 				digits=0000;
 				if(lletres.endsWith("Z"))
 				{
@@ -34,7 +31,7 @@ public class p154 {
 					if(lletra == 'A' || lletra == 'E' || lletra == 'I' || lletra == 'O' || lletra == 'U')
 						lletra++;
 					
-					lletres = ""+lletres.charAt(0) + lletra + 'B';
+					lletres = lletres.substring(0,1) + (char)lletra + 'B';
 					
 				}else if(lletres.endsWith("ZZ"))
 				{
@@ -43,15 +40,19 @@ public class p154 {
 					if(lletra == 'A' || lletra == 'E' || lletra == 'I' || lletra == 'O' || lletra == 'U')
 						lletra++;
 					
-					lletres = lletra + "BB";
+					lletres = (char)lletra + "BB";
 				}else {
 					char lletra = lletres.charAt(2);
 					lletra++;
 					if(lletra == 'A' || lletra == 'E' || lletra == 'I' || lletra == 'O' || lletra == 'U')
 						lletra++;
 					
-					lletres = ""+lletres.charAt(0) + lletres.charAt(1)+ lletra;
+					lletres = lletres.substring(0,1) + lletres.charAt(1)+ (char)lletra;
 				}
+
+			}
+			else { 
+				digits++;
 			}
 				
 			System.out.format("%04d %s\n",digits, lletres);

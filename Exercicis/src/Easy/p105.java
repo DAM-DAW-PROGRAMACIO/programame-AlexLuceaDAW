@@ -14,11 +14,12 @@ public class p105 {
 		String linia = sc.nextLine();
 		
 		while(!linia.equals("-1")) {
-			TreeMap<Double,Integer> ventesDia = new TreeMap<Double,Integer>();
-			for(int i=0; i<6;i++) {
-				ventesDia.put(Double.parseDouble(sc.nextLine()), i);
-			}
+			TreeMap<Integer, Double> ventesDia = new TreeMap<Integer, Double>();
 			
+			for(int i=0; i<6;i++) {
+				ventesDia.put(i, Double.parseDouble(sc.nextLine()));
+			}
+			for()
 			
 			double dinersMinDia = ventesDia.firstKey();
 			double dinersMaxDia = ventesDia.lastKey();

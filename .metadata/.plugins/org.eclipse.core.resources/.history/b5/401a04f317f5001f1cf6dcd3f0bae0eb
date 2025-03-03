@@ -1,0 +1,24 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p518 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String linia = sc.nextLine();
+		
+		
+		while(!linia.equals("0.00")) {
+			Scanner scl = new Scanner(linia);
+			scl.useDelimiter(".");
+			System.out.println(scl.next());
+			
+			linia=sc.nextLine();
+		}
+		sc.close();
+	}
+
+}
