@@ -8,13 +8,13 @@ public class p337 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		String linia = sc.nextLine();
+		int casos = sc.nextInt();
 		
 		
-		while(linia !=null && linia!=null) {
+		for(int i = 0; i < casos; i++) {
 			
 			
-			linia=sc.nextLine();
+			
 		}
 		sc.close();
 	}

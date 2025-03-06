@@ -23,6 +23,7 @@ public class p455 {
 			
 			num= sc.nextInt();
 		
+			
 		while(!trobat) {
 			if(num%contador == 0 && 100%contador == 0)
 				trobat = true;
@@ -34,7 +35,7 @@ public class p455 {
 			if(num%contador !=0 || 100%contador != 0)
 				trobat = true;
 			else
-				mcd *= contador;
+				mcd = contador;
 		}
 		
 		numBo =mcd;
@@ -44,5 +45,4 @@ public class p455 {
 		sc.close();
 		
 	}
-
 }

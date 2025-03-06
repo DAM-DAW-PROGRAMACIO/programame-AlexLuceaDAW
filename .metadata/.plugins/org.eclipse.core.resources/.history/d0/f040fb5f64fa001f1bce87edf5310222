@@ -1,0 +1,29 @@
+package Easy;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class p141 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String linia = sc.nextLine();
+		
+		Stack<Character> casos = new Stack<Character>();
+		
+		push fiques
+		pop el treus
+		peek comproves
+		
+		
+		while(linia !=null && linia!=null) {
+			
+			
+			linia=sc.nextLine();
+		}
+		sc.close();
+	}
+
+}

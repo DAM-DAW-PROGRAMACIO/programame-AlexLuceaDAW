@@ -1,0 +1,57 @@
+package Easy;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class p141 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		push fiques
+		pop el treus
+		peek comproves
+		
+		
+		while(sc.hasNext()) {
+			String linia = sc.nextLine();
+			Scanner sc2 = new Scanner(linia);
+			Stack<Character> casos = new Stack<Character>();
+			String resposta = "SI";
+			
+			for(int i = 0; i <linia.length(); i++) {
+				char caracter = sc2.next().charAt(i);
+				char lastCar;
+				if(caracter == '{'||caracter == '('||caracter == '[') {
+					casos.push(caracter);
+				}else if(caracter == '}') {
+					lastCar = casos.pop();
+					if(!(lastCar=='{')) {
+						resposta = "NO";
+						break;
+					}
+				}else if(caracter == ')') {
+					lastCar = casos.pop();
+					if(!(lastCar=='(')) {
+						resposta = "NO";
+						break;
+					}
+				}else if(caracter == ']') {
+					lastCar = casos.pop();
+					if(!(lastCar=='[')) {
+						resposta = "NO";
+						break;
+					}
+				}
+			}
+			System.out.println(resposta);
+
+			
+			linia=sc.nextLine();
+		}
+		sc.close();
+	}
+
+}

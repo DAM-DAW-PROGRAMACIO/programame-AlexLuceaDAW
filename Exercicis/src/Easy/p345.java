@@ -2,30 +2,33 @@ package Easy;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class p345 {
 
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String linia = br.readLine();
+		Scanner sc = new Scanner(System.in);
+		
+		
+		String linia = sc.nextLine();
 		
 		
 		int casos = Integer.parseInt(linia);
 		int files[][] = new int [9][9];
-		
-		
-		String resposta = "SI";
-		
-		linia = br.readLine();
+
 		
 		for(int i = 0; i < casos; i++) {
+			
+			String resposta = "SI";
 			
 			int comprovarFiles[] = {0,0,0,0,0,0,0,0,0,0};
 			int comprovarColumnes[]= {0,0,0,0,0,0,0,0,0,0};
 			int comprovarGrups[] = {0,0,0,0,0,0,0,0,0,0};
-
+			
+			linia = sc.nextLine();
+			
 			String arrayLinia[] = linia.split(" ");
 			
 			for(int x = 0; x < 9; x++) {

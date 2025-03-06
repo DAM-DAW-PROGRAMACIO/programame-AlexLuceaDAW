@@ -2,36 +2,29 @@ package Easy;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class p456 {
 
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String linia = br.readLine();
-		int amplada;
-		int altura;
-		int quadTableta;
-		int necesaris;
-		int quantitat=0;
-		String arrayLinia[];
-		int contador;
-		contador = Integer.parseInt(linia);
+		Scanner sc = new Scanner(System.in);
 		
-		for (int i = 0; i < contador; contador++){
+		int casos = sc.nextInt();
+		
+		for(int i = 0; i <casos; i++) {
+			int base = sc.nextInt();
+			int altura = sc.nextInt();
 			
-			linia=br.readLine();
-			arrayLinia = linia.split(" ");
-			
-			amplada = Integer.parseInt(arrayLinia[0]);
-			altura = Integer.parseInt(arrayLinia[1]);		
-			necesaris=Integer.parseInt(arrayLinia[2]);
+			int necesaris = sc.nextInt();
+			int quadTableta;
+			int quantitat;
 			
 			if(altura != 0)
-				quadTableta = amplada*altura;
+				quadTableta = base*altura;
 			else
-				quadTableta = amplada;
+				quadTableta = base;
 			
 			quantitat = necesaris/quadTableta;
 			
@@ -41,7 +34,8 @@ public class p456 {
 				quantitat = necesaris/quadTableta+1;
 			
 			System.out.println(quantitat);
-		} br.close();
+			
+		} sc.close();
 	}
 
 }
