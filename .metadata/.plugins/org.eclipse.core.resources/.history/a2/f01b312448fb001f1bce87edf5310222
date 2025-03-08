@@ -1,0 +1,36 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p347 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		int base = sc.nextInt();
+		int altura = sc.nextInt();	
+		while(!(base == 0 && altura == 0)) {
+			
+			int contador = 0;
+			while(altura >=10 && base >=10) {
+				if(base == altura) {
+					contador =1;
+					break;
+				}else if(base>altura) {
+					base = base-altura;
+					contador++;
+				}else{
+					altura = altura-base;
+					contador++;
+				}
+			}
+			
+			System.out.println(contador);
+			
+			base = sc.nextInt();
+			altura = sc.nextInt();	
+		}
+		sc.close();
+	}
+
+}

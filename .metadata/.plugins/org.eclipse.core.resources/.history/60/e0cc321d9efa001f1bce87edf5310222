@@ -1,0 +1,28 @@
+package Terrassa2023;
+
+import java.util.*;
+
+public class pG {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int nVeces = sc.nextInt();
+		
+		while(nVeces != 0) {
+			int[] numeros = new int[nVeces];
+			for(int i = 0; i < nVeces; i++) {
+				numeros[i] = sc.nextInt();
+			}
+			Arrays.sort(numeros);
+			int suma = numeros[0];
+			for(i = 1; i < nVeces; i++) {
+				
+			}
+
+		}
+		sc.close();
+	}
+
+}

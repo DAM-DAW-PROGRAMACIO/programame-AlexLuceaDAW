@@ -9,11 +9,9 @@ public class p141 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		
 		/*push fiques
 		pop el treus
 		peek comproves*/
-		
 
 		while(sc.hasNext()) {
 			
@@ -63,7 +61,6 @@ public class p141 {
 						resposta = "NO";
 						break;
 					}
-					
 				}
 			}
 			System.out.println(resposta);

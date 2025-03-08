@@ -48,7 +48,7 @@ public class p154 {
 					lletres = lletres.substring(0,2) + (char)lletra;
 				}
 				
-				digits=0000;
+				digits=0000; 
 
 			}
 			else { 
