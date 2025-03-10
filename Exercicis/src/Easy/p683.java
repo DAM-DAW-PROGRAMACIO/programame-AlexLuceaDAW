@@ -15,7 +15,7 @@ public class p683 {
 			
 			int min = Integer.MAX_VALUE;
 			int max = Integer.MIN_VALUE;
-			int posMax = ;
+			int posMax = -1;
 			int posMin = -1;
 			int dist;
 			int arrayTemp[]=new int[casos];

@@ -15,37 +15,36 @@ public class p611 {
 		
 		int sirAny;
 		int casos;
-		TreeMap<Integer, String> llibres = new TreeMap<>();
-		ArrayList<String> llibresBons = new ArrayList<>();
-		while(true) {
+	
+		while(sc.hasNext()) {
 			
+			TreeMap<Integer, String> llibres = new TreeMap<>();			
 			sirAny = sc.nextInt();
 			sc.nextLine();
 			casos = sc.nextInt();	
-
+			int any;
+			String llibre;
+			
 			for(int i = 0; i < casos; i++) {	
-				llibres.put(sc.nextInt(), sc.nextLine());
-			}
-			for(Entry<Integer, String> Llibre: llibres.entrySet()) {
-				int any = Llibre.getKey();
-				String llibre = Llibre.getValue();
+				any = sc.nextInt();
+				llibre = sc.nextLine();
 				
-				if(any > sirAny)
-					llibresBons.add(llibre);
+				if(any>=sirAny) {
+					llibres.put(any, llibre);
+				}
+				
 			}
 			
-			
-			if(llibresBons.size() == casos) {
-				for(int i = 0; i < llibresBons.size(); i++) {
-					System.out.print(llibresBons.get(i));
-				}
-			}else if(llibresBons.size() == 0)
+			if(llibres.size() == casos) {
+				System.out.println("TODAS");
+			}else if(llibres.size() == 0)
 				System.out.println("NINGUNA");
 			else {
-				System.out.print(llibresBons.get(0));
+				System.out.println(llibres.get(llibres.firstKey()).trim());
 			}
 
 		}
+		sc.close();
 	}
 
 }

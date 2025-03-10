@@ -1,6 +1,7 @@
 package Easy;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -19,38 +20,32 @@ public class p409 {
 		
 		casos = sc.nextInt();
 		
-		while(casos > 0) {
+		for(int i = 0; i<casos; i++){
 			
 			int nivells = 0;
 			nNivel = sc.nextInt();
-			nColla = sc.nextInt();
+			nColla = sc.nextInt();			
+			int altures[] = new int[nColla];
+			boolean fila = true;
 			
-			int pAlturas[]= new int[nColla];
-			for(int i = 0 ; i < nColla; i++) {
-				pAlturas[i] = sc.nextInt();
+			for(int j = 0 ; j < nColla; j++) {
+				altures[j] = sc.nextInt();
 			}
 			
-			pAlturas = Arrays.sort(pAlturas);
+			Arrays.sort(altures);
 			
-			while(nColla >1)/*nColla 9*/  {
-				a1 =pAlturas[nColla-1];
-				a2 = pAlturas[nColla-2];
+			int contador=0;
+			
+			while(contador < nColla-(nNivel-1)) {
 				
-				if(Math.abs(a1-a2) <= 15) {
-					a1=a2;
-					nColla--;
-					for(int i = 0; i > nNivel-1; i++) {
-						
-						a2=pAlturas[nColla-1];
-						if (Math.abs(a1-a2) <= 15)
-							nivells ++;
-						else
-							break;
-					}
-				}
-			}	
+				if(altures[contador+(nNivel-1)] - altures[contador] <= 15) {
+					nivells++;
+					contador+=nNivel;
+				}else
+					contador++;
+			}
+			
 			System.out.println(nivells);
-			casos--;
 		}
 		sc.close();
 	}

@@ -1,0 +1,45 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p688 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+			
+		String linia = sc.nextLine();
+		
+		while(!linia.equals(null) && !linia.equals("")) {
+			
+			int alturaSeguit =Integer.parseInt(linia.split(" ")[0]);
+			int alturaQualsevol = Integer.parseInt(linia.split(" ")[1]);
+			int numPeldaños = Integer.parseInt(linia.split(" ")[2]);
+					
+			int inici = sc.nextInt();
+			int primer = sc.nextInt();
+			int diferencia = primer-inici;
+			String resposta = "OK";
+			int diferenciaTotal = 0;
+			
+			for(int i=0; i<numPeldaños-1; i++) {
+				int peldaño = sc.nextInt();
+				int diferenciaNivell = Math.abs((peldaño-primer)-diferencia);
+				diferenciaTotal += diferenciaNivell;
+				if(diferenciaNivell > alturaSeguit || diferenciaTotal>alturaQualsevol) {
+					resposta = "Tropiezo";
+					sc.nextLine();
+					break;
+				}
+				
+				
+				primer = peldaño;
+			}
+			System.out.println(resposta);
+			linia = sc.nextLine();
+			
+		}
+		sc.close();
+	}
+
+}

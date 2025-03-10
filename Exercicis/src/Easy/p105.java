@@ -19,7 +19,6 @@ public class p105 {
 			for(int i=0; i<6;i++) {
 				ventesDia.put(i, Double.parseDouble(sc.nextLine()));
 			}
-			for()
 			
 			double dinersMinDia = ventesDia.firstKey();
 			double dinersMaxDia = ventesDia.lastKey();

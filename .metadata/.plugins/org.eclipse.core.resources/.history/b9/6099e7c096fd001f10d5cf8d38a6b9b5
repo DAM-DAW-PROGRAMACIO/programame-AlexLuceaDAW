@@ -1,0 +1,50 @@
+package Easy;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class p260 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int casos = Integer.parseInt(sc.nextLine());
+		
+		
+		for(int i = 0; i<casos; i++) {
+			String linia1=sc.nextLine().toLowerCase();
+			linia1 = linia1.replaceAll("\\s","");
+			
+			String linia2 = sc.nextLine().toLowerCase();
+			linia2 = linia2.replaceAll("\\s","");
+			
+			if(linia1.length()==linia2.length()) {
+				
+				Character array1[] = new Character [linia1.length()];
+				Character array2[] = new Character [linia2.length()];
+				
+				for(int j=0; j<linia1.length(); j++) {
+					array1[j]=linia1.charAt(j);
+					array2[j]=linia2.charAt(j);
+				}
+						
+				Arrays.sort(array1);
+				Arrays.sort(array2);
+				
+				
+				if(array1.equals(array2))
+					System.out.println("SI");
+				else
+					System.out.println("NO");
+			
+			}else {
+				System.out.println("NO");
+			}
+			
+
+		}
+		sc.close();
+	}
+
+}
