@@ -1,0 +1,45 @@
+package Easy;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class p746 {
+
+	public static void main(String[] args) throws Exception{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Scanner sc = new Scanner(System.in);
+		
+		String linia = br.readLine();
+		
+		
+		while(!(linia.equals("0 0"))) {
+			
+			int nGuirnaldas = Integer.parseInt(linia.split(" ")[0]);
+			int dParedes = Integer.parseInt(linia.split(" ")[1]);
+			
+			int tamanoG [] = new int [nGuirnaldas];
+			int contador = 0;
+			
+			for(int i=0; i<nGuirnaldas; i++) {
+				tamanoG[i] = Integer.parseInt(br.readLine().split(" ")[i]);
+			}
+			
+			for(int i=0; i<nGuirnaldas; i++) {
+				for(int j=i+1; j<nGuirnaldas; j++){
+					if(tamanoG[i]+tamanoG[j]==dParedes) {
+						contador++;
+					}
+				}
+			}
+			
+			System.out.println(contador);
+			
+			linia = br.readLine();
+			
+		}
+		sc.close();
+	}
+
+}

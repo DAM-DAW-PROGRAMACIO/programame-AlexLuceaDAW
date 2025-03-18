@@ -1,0 +1,38 @@
+package Prova_2;
+
+import java.util.Scanner;
+
+
+
+public class p747 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		int F = sc.nextInt();
+		int C = sc.nextInt();
+		while(F != 0 && C != 0) { 
+			char[][] campo = new char[F][C];
+			boolean[][] check = new boolean[F][C];
+			for(int i = 0; i < F; i++) {
+				String line = sc.nextLine();
+				for(int j = 0; j < C; j++) {
+					campo[i][j] = line.charAt(0);
+				}
+			}
+		}
+	}
+	
+}
+class Tabla{
+	boolean[][] check;
+	
+	public Tabla(boolean[][] check) {
+		this.check = check;
+	}
+	
+	public void visit(int i, int j) {
+		check[i][j] = true;
+	}
+}

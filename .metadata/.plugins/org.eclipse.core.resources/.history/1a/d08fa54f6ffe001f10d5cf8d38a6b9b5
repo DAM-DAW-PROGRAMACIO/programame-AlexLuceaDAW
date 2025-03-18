@@ -1,0 +1,50 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p492 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int m = sc.nextInt();
+		int d = sc.nextInt();
+		int n = sc.nextInt();
+		
+		
+		while(!(m==0 && d==0 && n==0)) {
+			
+			int mcd = 0;
+			int start=0;
+			if(m==d)
+				System.out.println(n/m);
+			else {
+				
+				int major = Math.max(m, d);
+				int menor = Math.max(m, d);
+			
+				while(menor!=0) {
+					mcd = menor;
+					menor = major%menor;
+					major = mcd;
+				} 
+				start = m*(d/mcd);
+			
+			
+				int contador = n/start;
+				
+				
+				System.out.println(contador);
+				
+			}
+			
+			
+			 m = sc.nextInt();
+			 d = sc.nextInt();
+			 n = sc.nextInt();
+		}
+		sc.close();
+	}
+
+}

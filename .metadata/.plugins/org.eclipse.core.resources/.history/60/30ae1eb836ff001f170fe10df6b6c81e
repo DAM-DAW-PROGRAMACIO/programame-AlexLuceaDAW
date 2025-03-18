@@ -1,0 +1,43 @@
+package Prova_2;
+
+import java.util.Scanner;
+
+public class p742 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		int casos = sc.nextInt();
+		
+		for(int i=0; i<casos; i++) {
+			int zeroT = 0;
+			int cont = 0;
+			String balas = sc.next();
+			for(int j = 0; j < balas.length()-1; j++) {
+				int n = Integer.parseInt(Character.toString(balas.charAt(j)));
+				if(n == 0) {
+					zeroT++;
+					if(Integer.parseInt(Character.toString(balas.charAt(j+1))) == 0)
+						cont++;
+				}
+			}
+			int n = Integer.parseInt(Character.toString(balas.charAt(balas.length()-1)));
+			if(n == 0) {
+				zeroT++;
+				if(Integer.parseInt(Character.toString(balas.charAt(0))) == 0)
+					cont++;
+			}
+			double chances = cont/(double) zeroT;
+			if(chances > 0.5)
+				System.out.println("No girar");
+			else if(chances < 0.5)
+				System.out.println("Girar");
+			else
+				System.out.println("Da igual");
+		}
+		sc.close();
+	}
+	
+}

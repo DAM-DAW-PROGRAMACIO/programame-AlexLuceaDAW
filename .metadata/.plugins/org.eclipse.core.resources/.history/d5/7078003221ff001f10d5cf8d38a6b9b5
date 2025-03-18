@@ -1,0 +1,83 @@
+package Easy;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class p678 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);	
+		
+		String linia1 = sc.nextLine().trim();
+		
+		while(!linia1.equals(".")) {
+			
+			String linia2=sc.nextLine().trim();
+			
+			boolean ahorcado = false;
+			boolean trobat = false;
+			
+			
+			char arrayLinia2[] = linia2.toCharArray();
+			char arrayLinia1[] = linia1.toCharArray();	
+
+			int contador = 0;
+			
+			ArrayList<Character> dits = new ArrayList<Character>();
+			
+			StringBuilder sb = new StringBuilder();
+			
+			int longitud = arrayLinia2.length;
+			int cicle =0; 
+			String linia = "";
+			
+			while(!trobat && !ahorcado && cicle<arrayLinia1.length) {
+				
+				if(linia.equals(linia1)) {
+					trobat = true;
+				}else {
+					char target = arrayLinia1[cicle];
+					
+					for(int i = 0; i<longitud; i++) {
+						if(target == arrayLinia2[i] || dits.contains(target)) {
+							linia+=target;
+							dits.add(target);
+							break;
+						}else {
+							if(!dits.contains(arrayLinia2[i])) {
+								dits.add(arrayLinia2[i]);
+								contador++;
+								if(contador>=7){
+									ahorcado = true;
+									break;
+								}
+							}else
+								break;
+						}
+					}
+					
+					cicle++;
+				}
+			
+			}
+			if(linia.equals(linia1))
+				trobat = true;
+			
+			
+			if (ahorcado)
+				System.out.println("AHORCADO");
+			else if(trobat)
+				System.out.println("SALVADO");
+			else
+				System.out.println("COLGANDO");
+
+			linia1 = sc.nextLine().trim();
+
+			
+		}
+		sc.close();
+	}
+
+}

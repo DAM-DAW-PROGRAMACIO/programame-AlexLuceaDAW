@@ -1,0 +1,55 @@
+package Easy;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class p678 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);	
+		
+		while(!sc.hasNext(".")) {
+			String linia1=sc.nextLine().trim();
+			String linia2=sc.nextLine().trim();
+			String resposta = "COLGADO";
+			
+			char arrayLinia1[]  = linia1.toCharArray();
+			char arrayLinia2[] = linia2.toCharArray();
+			
+			Arrays.sort(arrayLinia1);
+			Arrays.sort(arrayLinia2);
+			
+			int contador = 0;
+			
+			ArrayList<Character> dits = new ArrayList<Character>();
+			ArrayList<Character> correcte = new ArrayList<Character>();
+			
+			int longitud = arrayLinia2.length;
+			for(int i =0; i<longitud; i++) {
+				if(arrayLinia1[i]!=arrayLinia2[i]){
+					if(!dits.contains(arrayLinia2[i])) {
+						contador++;
+						dits.add(arrayLinia2[i]);
+						
+						if(contador>=7)
+							resposta = "AHORCADO";
+							break;
+					}
+				
+				}else if(arrayLinia1[i]==arrayLinia2[i]) {
+					correcte.add(arrayLinia2[i]);
+					if(correcte.size() == arrayLinia1.length)
+						System.out.println("SALVADO");
+						break;
+				}
+			}
+			System.out.println(resposta);
+			
+			
+		}
+		sc.close();
+	}
+
+}

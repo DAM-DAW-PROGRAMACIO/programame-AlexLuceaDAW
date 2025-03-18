@@ -1,0 +1,42 @@
+package Prova_2;
+
+import java.util.Scanner;
+
+public class p744 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		while(sc.hasNext()) {
+			
+			int temps = sc.nextInt();
+			
+			sc.nextLine();
+			
+			String linia = sc.nextLine();
+			
+			String arrayLinia[] = linia.split(" ");
+			int arrayInt[]= new int [arrayLinia.length-1];
+			
+			for(int i =0; i<arrayLinia.length-1; i++) {
+				arrayInt[i] = Integer.parseInt(arrayLinia[i]);
+			}
+			
+			int missatge = 0;
+			int passat = 0; 
+			for(int i =0; i<arrayInt.length; i++) {
+				if(arrayInt[i] == temps) {
+					missatge++;
+					passat += passat+temps;
+				}
+			}
+			
+			System.out.println(missatge);
+		}
+		
+		sc.close();
+	}
+
+}

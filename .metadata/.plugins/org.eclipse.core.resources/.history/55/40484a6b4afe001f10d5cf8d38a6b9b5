@@ -1,0 +1,40 @@
+package Easy;
+
+import java.util.Scanner;
+
+public class p746 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int nGuirnaldas = sc.nextInt();
+		int dParedes = sc.nextInt();
+		
+		
+		while(!(nGuirnaldas==0 && dParedes == 0)) {
+			
+			
+			int tamanoG [] = new int [nGuirnaldas];
+			int contador = 0;
+			
+			for(int i=0; i<nGuirnaldas; i++) {
+				tamanoG[i] = sc.nextInt();
+			}
+			
+			for(int i=0; i<nGuirnaldas; i++) {
+				for(int j=i+1; j<nGuirnaldas-1; j++){
+					if(tamanoG[i]+tamanoG[j]==dParedes) {
+						contador++;
+					}
+				}
+			}
+			
+			System.out.println(contador);
+			nGuirnaldas = sc.nextInt();
+			dParedes = sc.nextInt();
+		}
+		sc.close();
+	}
+
+}

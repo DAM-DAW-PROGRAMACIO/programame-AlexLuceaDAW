@@ -1,0 +1,67 @@
+package Easy;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class p678 {
+
+	public static void main(String[] args) throws Exception{
+		
+		Scanner sc = new Scanner(System.in);	
+		
+		String linia1 = sc.nextLine().trim();
+		
+		while(!linia1.equals(".")) {
+			
+			String linia2=sc.nextLine().trim();
+			String resposta = "COLGADO";
+			
+			char arrayLinia1[]  = linia1.toCharArray();
+			char arrayLinia2[] = linia2.toCharArray();
+			
+			Arrays.sort(arrayLinia1);
+			Arrays.sort(arrayLinia2);
+			
+			int contador = 0;
+			
+			ArrayList<Character> paraula = new ArrayList<Character>();
+
+			ArrayList<Character> dits = new ArrayList<Character>();
+			ArrayList<Character> correcte = new ArrayList<Character>();
+			
+			int longitud = arrayLinia2.length;
+			
+			for(int i = 0; i<linia1.length(); i++) {
+				paraula.add( linia1.charAt(i));
+			}
+			
+			for(int i =0; i<longitud; i++) {
+				if(!paraula.contains(arrayLinia2[i])){
+					if(!dits.contains(arrayLinia2[i])) {
+						contador++;
+						dits.add(arrayLinia2[i]);
+						if(contador>=7) {
+							resposta = "AHORCADO";
+							break;
+						}
+							
+					}
+				
+				}else{
+					correcte.add(arrayLinia2[i]);
+					if(correcte.size() == arrayLinia1.length) {
+						resposta = "SALVADO";
+						break;
+					}
+				}
+			}
+			System.out.println(resposta);
+			linia1 = sc.nextLine().trim();
+
+			
+		}
+		sc.close();
+	}
+
+}

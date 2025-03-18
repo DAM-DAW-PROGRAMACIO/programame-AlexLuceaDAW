@@ -13,29 +13,36 @@ public class p492 {
 		int n = sc.nextInt();
 		
 		
-		while(!(n==0 && d==0 && n==0)) {
-			int start=0;
-			if(m>d) {
-				if(m%d == 0)
-					start= m;
-				else
-					start = m*d; 
+		while(m!=0 && d!=0 && n!=0) {
+			
+			long mcd = 0;
+			long start=0;
+			
+			if(m==d)
+				System.out.println(n/m);
+			else {
+				
+				long major = Math.max(m, d);
+				long menor = Math.min(m, d);
+				
+				long a = major;
+				long b = menor;
+				while(b!=0) {
+					mcd = b;
+					b = a%b;
+					a = mcd;
+				} 
+				
+				start =major*(menor/mcd);
 
+				long contador = n/start;
+				
+				
+				System.out.println(contador);
+				
 			}
-			else if (m<d)
-			{
-				if(d%m == 0)
-					start= d;
-				else
-					start = m*d; 
-			}
-			else
-				start = m;
-			
-			int contador = n/start;
 			
 			
-			System.out.println(contador);
 			 m = sc.nextInt();
 			 d = sc.nextInt();
 			 n = sc.nextInt();

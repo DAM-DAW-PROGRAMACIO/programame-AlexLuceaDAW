@@ -1,0 +1,27 @@
+package Prova_2;
+
+import java.util.Scanner;
+
+public class p741 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		int casos = sc.nextInt();
+		
+		for(int i = 0; i < casos; i++) {
+			long pisos = sc.nextLong();
+			long cartes = 0;
+			long aux;
+			for (int j = 1; j <= pisos; j++) {
+				aux = (j -1) + 2 * j;
+				cartes += aux;
+			}
+			System.out.println(cartes);
+		}
+		sc.close();
+	}
+
+}
